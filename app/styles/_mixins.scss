@@ -1,0 +1,25 @@
+@mixin input-box-shadow($color) {
+    -webkit-box-shadow: 0px 2px 0px 0px $color;
+    -moz-box-shadow: 0px 2px 0px 0px $color;
+    box-shadow: 0px 2px 0px 0px $color;
+}
+
+@mixin placeholder-text-color($color) {
+    &::placeholder {
+        color: $color;
+        opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+        color: $color;
+    }
+
+    &::-ms-input-placeholder {
+        color: $color;
+    }
+}
+
+@mixin element-appearance($value) {
+    appearance: $value;
+    -webkit-appearance:$value;
+}

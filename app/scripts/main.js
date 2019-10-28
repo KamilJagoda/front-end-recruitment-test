@@ -84,4 +84,6 @@
     baconImgWrapper.appendChild(baconImg.cloneNode(true));
   };
   addBaconBtn.addEventListener('click', addBacon);
+
+
 })();
