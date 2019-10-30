@@ -238,22 +238,19 @@
                   <legend class="step-title"><i class="circle">1</i>Personal information</legend>
                   <div class="mdl-grid mdl-grid--no-spacing box box--two-column">
                     <div class="mdl-textfield mdl-js-textfield mdl-cell  mdl-cell--6-col-desktop mdl-cell--8-col-tablet field">
-                      <input class="mdl-textfield__input" type="text" id="first-name" placeholder="Elon">
+                      <input class="mdl-textfield__input" type="text" id="first-name" placeholder="Elon" data-validation="required">
                       <label class="mdl-textfield__label" for="first-name">First name</label>
-                      <span class="mdl-textfield__error">Field required</span>
                     </div>
                     <div class="mdl-textfield mdl-js-textfield mdl-cell  mdl-cell--6-col-desktop mdl-cell--8-col-tablet field">
-                      <input class="mdl-textfield__input" type="text" id="last-name" placeholder="Musk">
+                      <input class="mdl-textfield__input" type="text" id="last-name" placeholder="Musk" data-validation="required">
                       <label class="mdl-textfield__label" for="last-name">Last name</label>
-                      <span class="mdl-textfield__error">Field required</span>
                     </div>
                   </div>
 
                   <div class="mdl-grid mdl-grid--no-spacing box">
                     <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--12-col field">
-                      <input class="mdl-textfield__input" type="email" id="email" placeholder="elon@spacex.com">
+                      <input class="mdl-textfield__input" type="email" id="email" placeholder="elon@spacex.com" data-validation="required">
                       <label class="mdl-textfield__label" for="email">Email</label>
-                      <span class="mdl-textfield__error">Incorrect email</span>
                     </div>
                   </div>
 
@@ -261,28 +258,26 @@
                     <div class="country mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet field">
                       <div class="country__wrapper">
                         <div class="country__select select">
-                          <select class="country__text" id="country">
-                            <option value="" disabled selected>United States</option>
-                            <option value="1">Poland</option>
-                            <option value="2">Germany</option>
-                            <option value="3">Italy</option>
+                          <select class="country__text" id="country" data-validation="required">
+                            <option value="United States" selected>United States</option>
+                            <option value="Poland">Poland</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Italy">Italy</option>
                           </select>
                           <label class="country__label">Country</label>
                         </div>
                       </div>
                     </div>
                     <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet field">
-                      <input class="mdl-textfield__input" type="text" placeholder="10001" id="postal-code">
+                      <input class="mdl-textfield__input" type="text" placeholder="10001" id="postal-code" data-validation="required">
                       <label class="mdl-textfield__label" for="postal-code">Postal Code</label>
-                      <span class="mdl-textfield__error">Incorrect postal code</span>
                     </div>
                   </div>
 
                   <div class="mdl-grid mdl-grid--no-spacing box">
                     <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--12-col field">
-                      <input class="mdl-textfield__input" type="text" placeholder="(212) 692-93-92" id="phone">
+                      <input class="mdl-textfield__input" type="text" placeholder="(212) 692-93-92" id="phone" data-validation="required">
                       <label class="mdl-textfield__label" for="phone">Phone Number</label>
-                      <span class="mdl-textfield__error">Incorrect phone number format</span>
                     </div>
                   </div>
                 </fieldset>
@@ -294,23 +289,20 @@
                   </legend>
                   <div class="mdl-grid mdl-grid--no-spacing box">
                     <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--12-col field">
-                      <input class="mdl-textfield__input" type="text" id="credit-card" placeholder="0000 – 0000 – 0000 – 0000">
+                      <input class="mdl-textfield__input" type="text" id="credit-card" placeholder="0000 – 0000 – 0000 – 0000" data-validation="required">
                       <label class="mdl-textfield__label" for="credit-card">Credit Card Number</label>
                       <span class="visa-icon"><img src="images/visa-min.jpg" alt="Visa icon"></span>
-                      <span class="mdl-textfield__error">Incorrrect credit card number</span>
                     </div>
                   </div>
 
                   <div class="mdl-grid mdl-grid--no-spacing box box--two-column">
                     <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet field">
-                      <input class="mdl-textfield__input" type="text" id="securitycode" placeholder="***">
+                      <input class="mdl-textfield__input" type="number" id="securitycode" placeholder="***" data-validation="required length-3">
                       <label class="mdl-textfield__label" for="securitycode">Security code</label>
-                      <span class="mdl-textfield__error">Incorrect security code</span>
                     </div>
                     <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet field">
-                      <input class="mdl-textfield__input" type="text" id="expiration-date" placeholder="MM / YY">
+                      <input class="mdl-textfield__input" type="text" id="expiration-date" placeholder="MM / YY" data-validation="required">
                       <label class="mdl-textfield__label" for="expiration-date">Expiration date</label>
-                      <span class="mdl-textfield__error">Incorrect expiration date</span>
                     </div>
                   </div>
                   <div class="mdl-cell mdl-cell--12-col box-action">
