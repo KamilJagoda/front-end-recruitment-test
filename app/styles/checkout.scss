@@ -79,7 +79,7 @@
     }
 
     .invalid {
-        margin-bottom: $invalid-field__magin-bottom;
+        margin-bottom: $invalid-field__margin-bottom;
         position: relative;
         .validation-error {
             position: absolute;
@@ -128,7 +128,7 @@
         margin-bottom: 0;
 
         &.invalid {
-            margin-bottom: $invalid-field__magin-bottom;
+            margin-bottom: $invalid-field__margin-bottom;
         }
     }
 
@@ -151,7 +151,7 @@
                 }
 
                 &.invalid {
-                    margin-bottom: $invalid-field__magin-bottom;
+                    margin-bottom: $invalid-field__margin-bottom;
                 }
             }
         }
