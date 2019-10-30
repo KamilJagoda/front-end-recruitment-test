@@ -51,6 +51,7 @@
 
     <!-- Your styles -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/checkout.css">
   </head>
   <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -68,6 +69,7 @@
           <a href="#features" class="mdl-layout__tab">Details</a>
           <a href="#features" class="mdl-layout__tab">Technology</a>
           <a href="#features" class="mdl-layout__tab">FAQ</a>
+          <a href="#checkout" class="mdl-layout__tab">Checkout</a>
           <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
             <i class="material-icons" role="presentation">add</i>
             <span class="visuallyhidden">Add</span>
@@ -225,6 +227,128 @@
               <p>
                 Cupidatat labore nisi ut sunt voluptate quis sunt qui ad Lorem esse nisi. Ex esse velit ullamco incididunt occaecat dolore veniam tempor minim adipisicing amet. Consequat in exercitation est elit anim consequat cillum sint labore cillum. Aliquip mollit laboris ad labore anim.
               </p>
+            </div>
+          </section>
+        </div>
+        <div class="checkout mdl-layout__tab-panel" id="checkout">
+          <section class="section--center mdl-grid mdl-grid--no-spacing">
+            <div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet">
+              <form class="checkout__form" name="jsForm" id="js-checkout-form">
+                <fieldset>
+                  <legend class="step-title"><i class="circle">1</i>Personal information</legend>
+                  <div class="mdl-grid mdl-grid--no-spacing box box--two-column">
+                    <div class="mdl-textfield mdl-js-textfield mdl-cell  mdl-cell--6-col-desktop mdl-cell--8-col-tablet field">
+                      <input class="mdl-textfield__input" type="text" id="first-name" placeholder="Elon" data-validation="required">
+                      <label class="mdl-textfield__label" for="first-name">First name</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-cell  mdl-cell--6-col-desktop mdl-cell--8-col-tablet field">
+                      <input class="mdl-textfield__input" type="text" id="last-name" placeholder="Musk" data-validation="required">
+                      <label class="mdl-textfield__label" for="last-name">Last name</label>
+                    </div>
+                  </div>
+
+                  <div class="mdl-grid mdl-grid--no-spacing box">
+                    <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--12-col field">
+                      <input class="mdl-textfield__input" type="email" id="email" placeholder="elon@spacex.com" data-validation="required">
+                      <label class="mdl-textfield__label" for="email">Email</label>
+                    </div>
+                  </div>
+
+                  <div class="mdl-grid mdl-grid--no-spacing box box--two-column">
+                    <div class="country mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet field">
+                      <div class="country__wrapper">
+                        <div class="country__select select">
+                          <select class="country__text" id="country" data-validation="required">
+                            <option value="United States" selected>United States</option>
+                            <option value="Poland">Poland</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Italy">Italy</option>
+                          </select>
+                          <label class="country__label">Country</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet field">
+                      <input class="mdl-textfield__input" type="text" placeholder="10001" id="postal-code" data-validation="required">
+                      <label class="mdl-textfield__label" for="postal-code">Postal Code</label>
+                    </div>
+                  </div>
+
+                  <div class="mdl-grid mdl-grid--no-spacing box">
+                    <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--12-col field">
+                      <input class="mdl-textfield__input" type="text" placeholder="(212) 692-93-92" id="phone" data-validation="required">
+                      <label class="mdl-textfield__label" for="phone">Phone Number</label>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend class="step-title payments">
+                    <i class="circle">2</i>
+                    <span>Payments details</span>
+                    <i class="material-icons https">https</i>
+                  </legend>
+                  <div class="mdl-grid mdl-grid--no-spacing box">
+                    <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--12-col field">
+                      <input class="mdl-textfield__input" type="text" id="credit-card" placeholder="0000 – 0000 – 0000 – 0000" data-validation="required">
+                      <label class="mdl-textfield__label" for="credit-card">Credit Card Number</label>
+                      <span class="visa-icon"><img src="images/visa-min.jpg" alt="Visa icon"></span>
+                    </div>
+                  </div>
+
+                  <div class="mdl-grid mdl-grid--no-spacing box box--two-column">
+                    <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet field">
+                      <input class="mdl-textfield__input" type="number" id="securitycode" placeholder="***" data-validation="required length-3">
+                      <label class="mdl-textfield__label" for="securitycode">Security code</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet field">
+                      <input class="mdl-textfield__input" type="text" id="expiration-date" placeholder="MM / YY" data-validation="required">
+                      <label class="mdl-textfield__label" for="expiration-date">Expiration date</label>
+                    </div>
+                  </div>
+                  <div class="mdl-cell mdl-cell--12-col box-action">
+                    <button id="submit-form" class="mdl-button mdl-js-button purchase" type="submit">
+                      <i class="material-icons shopping-cart">shopping_cart</i>
+                      Complete purchase
+                    </button>
+                  </div>
+                </fieldset>
+
+
+              </form>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet">
+              <div class="mdl-card">
+                <div class="summary-section">
+                  <div class="mdl-card__title-wrapper mdl-card--expand">
+                    <h2 class="mdl-card__title title">Your order</h2>
+                  </div>
+                  <div>
+                    <ul class="demo-list-item mdl-list">
+                      <li class="mdl-list__item">
+                        Apple Watch Sport <span class="">$ 580</span>
+                      </li>
+                      <li class="mdl-list__item">
+                        Modern Buckle <span class="">$ 380</span>
+                      </li>
+                    </ul>
+                    <div class="divider"></div>
+                    <ul class="demo-list-item mdl-list">
+                      <li class="mdl-list__item">
+                        Total purchases <span class="">$ 960.00</span>
+                      </li>
+                      <li class="mdl-list__item">
+                        Estimated tax <span class="">$ 0</span>
+                      </li>
+                    </ul>
+                    <div class="divider divider-summary"></div>
+                    <ul class="demo-list-item mdl-list">
+                      <li class="mdl-list__item">
+                        Total <span class="summary">$ 960</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
         </div>

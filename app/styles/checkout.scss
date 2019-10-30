@@ -1,0 +1,299 @@
+// Imports
+@import '_variables';
+@import '_mixins';
+
+
+.mdl-demo {
+    .mdl-layout {
+        &__tab-panel:not(#overview) {
+            &.checkout {
+                background-color: $background-color;
+            }
+        }
+    }
+}
+
+
+.checkout {
+    color: $primary-color;
+
+    .section--center {
+        display: flex;
+        flex-direction: column-reverse;
+        @media(min-width: 840px) {
+            flex-direction: row;
+        }
+    }
+    .step-title {
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: -0.4px;
+        font-weight: 700;
+        line-height: 1.2;
+        position: relative;
+        margin: 0 0 22px 0px;
+        .circle {
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            background-color: $primary-color;
+            line-height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            color: $white;
+            text-align: center;
+            font-style: normal;
+            margin-right: 5px;
+            @media (min-width: 991px) {
+                position: absolute;
+                left: -29px;
+                top: -3px;
+                margin-right: 0;
+            }
+        }
+        &.payments {
+            margin-top: 43px;
+            .https {
+                margin-left: 6px;
+                font-size: 13px;
+                vertical-align: middle;
+                display: inline-block;
+                margin-bottom: 1px;
+            }
+        }
+    }
+
+    input {
+        @include placeholder-text-color($placeholder-color);
+    }
+
+    &__form {
+        padding: 0 5px;
+        @media (min-width: 767px) {
+            padding: 0 7px 0 5px;
+        }
+
+        fieldset {
+            margin-bottom: 22px;
+        }
+    }
+
+    .invalid {
+        margin-bottom: $invalid-field__magin-bottom;
+        position: relative;
+        .validation-error {
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            font-size: 12px;
+            color: red;
+            line-height: 1.2;
+        }
+    }
+
+    .mdl-textfield {
+        &__input {
+            border-bottom: 0;
+            padding: 21px 0 1px;
+        }
+
+        &__label {
+            color: $primary-color-lighter;
+            font-size: 13px;
+        }
+
+        &.has-placeholder {
+            display: flex;
+            flex-direction: column;
+            .mdl-textfield__label {
+                order: 1;
+                visibility: visible;
+                bottom: auto;
+                top: 5px;
+                left: 12px;
+                width: auto;
+            }
+
+            .mdl-textfield__input {
+                order: 2;
+            }
+        }
+    }
+
+    .field {
+        @include input-box-shadow($box-shadow-inputs);
+        background: $white;
+        border-radius: 2px;
+        padding: 4px 12px 6px;
+        margin-bottom: 0;
+
+        &.invalid {
+            margin-bottom: $invalid-field__magin-bottom;
+        }
+    }
+
+    .box {
+        margin-bottom: 20px;
+        &--two-column {
+            justify-content: space-between;
+            display: flex;
+            margin-bottom: 0;
+            align-items: flex-start;
+            @media (min-width: 767px) {
+                margin-bottom: 20px;
+            }
+
+            .field {
+                margin-bottom: 20px;
+                @media (min-width: 767px) {
+                    width: 49%;
+                    margin-bottom: 0;
+                }
+
+                &.invalid {
+                    margin-bottom: $invalid-field__magin-bottom;
+                }
+            }
+        }
+    }
+
+    .visa-icon {
+        position: absolute;
+        right: 13px;
+        top: 15px;
+        max-width: 40px;
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+        }
+    }
+
+    .box-action {
+        @include input-box-shadow($box-shadow-actions);
+        background-color: $secondary-color;
+        margin: 40px 0 30px;
+        border-radius: 2px;
+        width: 100%;
+        .purchase {
+            width: 100%;
+            color: $white;
+            padding: 10px 16px 5px 10px;
+            height: auto;
+            font-size: 13px;
+            letter-spacing: 0.2px;
+
+            i {
+                font-size: 18px;
+                margin: 0 2px 2px 0;
+            }
+        }
+    }
+
+    .mdl-card {
+        margin: 0px 6px 20px;
+        width: auto;
+        border-radius: 2px;
+        @media (min-width: 767px) {
+            margin: 37px 6px 20px 6px;
+        }
+
+        @media(min-width: 840px) {
+            margin-bottom: 0;
+        }
+
+        &__title-wrapper {
+            padding: 15px;
+        }
+
+        &__title {
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.1px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .summary-section {
+            border: 1px dashed $primary-color;
+            margin: 5px;
+            border-radius: 5px;
+            padding-bottom: 25px;
+            .divider {
+                border-top: 1px dashed $primary-color;
+                margin: 12px 15px 12px;
+                &.divider-summary {
+                    margin-top: 6px;
+                }
+            }
+        }
+
+        .mdl-list {
+            padding: 0;
+            margin: 0;
+            &__item {
+                justify-content: space-between;
+                font-size: 12px;
+                padding: 2px 10px 13px 14px;
+                height: auto;
+                min-height: 0;
+                letter-spacing: 0;
+                .summary {
+                    font-weight: 700;
+                    font-size: 22px;
+                }
+            }
+
+            &:last-of-type {
+                .mdl-list__item {
+                    align-items: flex-start;
+                    padding-bottom: 10px;
+                }
+            }
+        }
+
+    }
+}
+
+.country {
+    position: relative;
+
+    &__select {
+        position: relative;
+        width: 100%;
+        padding-top: 4px;
+        &:after {
+            content: url('../images/dropdown-icon.svg');
+            position: absolute;
+            top: 12px;
+            right: -2px;
+            padding: 0;
+            pointer-events: none;
+        }
+    }
+
+    &__text {
+        @include element-appearance(none);
+        position: relative;
+        font-family: inherit;
+        background-color: transparent;
+        width: 100%;
+        outline: none;
+        font-size: 16px;
+        padding: 17px 0 1px;
+        letter-spacing: 0.2px;
+        border-radius: 0;
+        border: none;
+    }
+
+    &__label {
+        position: absolute;
+        left: 0;
+        color: $primary-color-lighter;
+        top: -2px;
+        font-size: 13px;
+    }
+}
+
+

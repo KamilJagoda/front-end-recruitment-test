@@ -76,4 +76,66 @@
   }
 
   // Your custom JavaScript goes here
+
+  // Bacon Copy
+  const addBaconBtn = document.querySelectorAll('#overview button')[0];
+  const baconImgWrapper = document.querySelectorAll('#overview section')[1];
+  const baconImg = baconImgWrapper.querySelector('img');
+
+  const addBacon = () => {
+    baconImgWrapper.appendChild(baconImg.cloneNode(true));
+  };
+  addBaconBtn.addEventListener('click', addBacon);
+
+  // Checkout simple validation
+  const checkoutForm = document.querySelector('#js-checkout-form');
+
+  const rules = {
+    'required': {
+      'valid': (val) => val && val.length,
+      'error': 'This field is required',
+    },
+    'length-3': {
+      'valid': (val) => val.length === 3,
+      'error': 'This field must have 3 characters',
+    },
+  };
+
+  const setError = (field, errorText, errorStatus) => {
+    const parentEl = field.parentElement;
+    const errorTextExist = parentEl.querySelector('.validation-error') !== null;
+
+    if (errorStatus && !errorTextExist) {
+      const errorElement = document.createElement('span');
+      parentEl.classList.add('invalid');
+      errorElement.classList.add('validation-error');
+      errorElement.innerText = errorText;
+      parentEl.appendChild(errorElement);
+    } else if (errorStatus === false && errorTextExist) {
+      parentEl.classList.remove('invalid');
+      parentEl.removeChild(parentEl.querySelector('.validation-error'));
+    }
+  };
+
+  const validateForm = () => {
+    const fields = [...checkoutForm.querySelectorAll('input, select')];
+
+    fields.map( (field) => {
+      const elRule = field.getAttribute('data-validation').split(' ');
+      const elValue = field.value;
+
+      elRule.map( (ruleName) => {
+        const rule = rules[ruleName];
+        !rule.valid(elValue || '') ?
+          setError(field, rule.error, true) :
+          setError(field, '', false);
+      });
+    });
+  };
+
+  const submitForm = (e) => {
+    e.preventDefault();
+    validateForm();
+  };
+  checkoutForm.addEventListener('submit', submitForm);
 })();
